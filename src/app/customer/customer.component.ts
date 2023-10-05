@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ICustomer } from '../shared/interfaces';
 
 @Component({
   selector: 'app-customer',
@@ -9,13 +10,17 @@ import { Component, OnInit } from '@angular/core';
 export class CustomerComponent implements OnInit {
   title: string = '';
   // people: any[] = [];
-  people: Array<{
-    id: number;
-    name: string;
-    city: string;
-    orderTotal: number;
-    customerSince: Date;
-  }> = [];
+
+  // cara ini baik apabila tidak menggunakan interface
+  // people: Array<{
+  //   id: number;
+  //   name: string;
+  //   city: string;
+  //   orderTotal: number;
+  //   customerSince: Date;
+  // }> = [];
+
+  people: ICustomer[];
 
   constructor() {
     // PADA INITIATE VALUE DISINI MERUPAKAN DATA YANG AKAN DI RENDER TEPAT SAAT PAGE DI RENDER

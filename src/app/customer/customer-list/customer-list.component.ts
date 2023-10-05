@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ICustomer } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'app-customer-list',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
   //   template: `<p>tess</p>`,
 })
 export class CustomerListComponent implements OnInit {
-  filteredCustomers: any[] = [];
+  // filteredCustomers: any[] = [];
+  filteredCustomers: ICustomer[] = [];
   customersOrderTotal: number = 0;
   currencyCode: string = 'USD';
 
