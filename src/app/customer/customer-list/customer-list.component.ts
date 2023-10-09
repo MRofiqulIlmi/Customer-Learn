@@ -56,4 +56,8 @@ export class CustomerListComponent implements OnInit {
       this.customersOrderTotal += cust.orderTotal || 0;
     });
   }
+
+  sortHandle(prop: string) {
+    //this handle for sort the table later
+  }
 }
