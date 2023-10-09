@@ -22,6 +22,12 @@ export class CustomerComponent implements OnInit {
 
   people: ICustomer[];
 
+  isVisible: boolean = true;
+
+  changeVisible() {
+    this.isVisible = !this.isVisible;
+  }
+
   constructor() {
     // PADA INITIATE VALUE DISINI MERUPAKAN DATA YANG AKAN DI RENDER TEPAT SAAT PAGE DI RENDER
     // this.title = '';
@@ -31,6 +37,7 @@ export class CustomerComponent implements OnInit {
   ngOnInit(): void {
     // PADA TEMPAT INI AKAN TERKAIT SAMA LIFECYCLE, JADI BISA MENUNGGU UNTUK SELESAI HTTP REQ NANTINYA
     this.title = 'Admin List';
+
     this.people = [
       {
         id: 1,
