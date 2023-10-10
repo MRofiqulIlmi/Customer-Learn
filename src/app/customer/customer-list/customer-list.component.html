@@ -12,14 +12,19 @@
   <tbody>
     <tr *ngFor="let cust of filteredCustomers">
       <td>
-        <a>{{ cust.name }}</a>
+        <!-- some pipe is default also can be customize -->
+        <!-- this one is the way if you want to manipulate showen data the method name is pipe -->
+        <!-- <a>{{ cust.name | titlecase }}</a> -->
+        <a>{{ cust.name | Capitalize }}</a>
       </td>
       <td>{{ cust.city }}</td>
-      <td>{{ cust.orderTotal }}</td>
+
+      <!-- currency is default pipe for give currency like a dollar, and than the parameter for currency code, and than 2 type of printing 'code' and 'symbol' -->
+      <td>{{ cust.orderTotal | currency : currencyCode : "symbol" }}</td>
     </tr>
     <tr *ngIf="filteredCustomers && filteredCustomers.length">
       <td colspan="2">&nbsp;</td>
-      <td>{{ customersOrderTotal }}</td>
+      <td>{{ customersOrderTotal | currency : currencyCode : "symbol" }}</td>
     </tr>
     <tr *ngIf="!filteredCustomers || filteredCustomers.length">
       <td colspan="4">No customer found</td>
