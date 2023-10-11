@@ -1,4 +1,6 @@
-<filter-textbox></filter-textbox>
+<!-- $event is the event itself. The event binding (someevent) allows to bind to DOM events and to EventEmitter events. 
+  The syntax is exactly the same. For DOM events $event is the MouseEvent , KeyboardEvent , or the event value of the type of whatever event you listen to. -->
+<filter-textbox (changed)="filterHandle($event)"></filter-textbox>
 <br />
 <br />
 <table class="table table-hover">

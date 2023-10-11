@@ -72,4 +72,30 @@ export class CustomerListComponent implements OnInit {
   sortHandle(prop: string) {
     //this handle for sort the table later
   }
+
+  //filterHandle will map the data show only if the filter criteria was true or exist in list of data
+  filterHandle(data: string) {
+    if (data) {
+      this.filteredCustomers = this.filteredCustomers.filter(
+        (cust: ICustomer) => {
+          // console.log(cust.name.toLowerCase().indexOf(data.toLowerCase()));
+
+          const orderTotalIndex: boolean =
+            cust.orderTotal?.toString().indexOf(data) != undefined &&
+            cust.orderTotal?.toString().indexOf(data) > -1;
+
+          const showIndex: boolean =
+            cust.name.toLowerCase().indexOf(data.toLowerCase()) > -1 ||
+            cust.city.toLowerCase().indexOf(data.toLowerCase()) > -1;
+          // ||
+          // cust.orderTotal?.toString().indexOf(data) > -1;
+
+          return showIndex || orderTotalIndex;
+        }
+      );
+    } else {
+      this.filteredCustomers = this.customers;
+    }
+    this.calculateOrders();
+  }
 }
