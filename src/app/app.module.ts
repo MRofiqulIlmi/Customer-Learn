@@ -6,9 +6,16 @@ import { AppComponent } from './app.component';
 import { CustomerComponent } from './customer/customer.component';
 import { CustomerModule } from './customer/customer.module';
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
-  imports: [BrowserModule, AppRoutingModule, CustomerModule, SharedModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CoreModule,
+    CustomerModule,
+    SharedModule,
+  ],
   declarations: [AppComponent],
   providers: [],
   bootstrap: [AppComponent],
