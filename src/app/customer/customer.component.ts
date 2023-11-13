@@ -40,6 +40,12 @@ export class CustomerComponent implements OnInit {
     // PADA TEMPAT INI AKAN TERKAIT SAMA LIFECYCLE, JADI BISA MENUNGGU UNTUK SELESAI HTTP REQ NANTINYA
     this.title = 'Admin List';
 
+    //Subscribe use for observable event, that do for async activity like a http request
+    //so the data will be subscribe after the request has a response to the component
+    this.dataService
+      .getCustomers()
+      .subscribe((customers: ICustomer[]) => (this.people = customers));
+
     // this.people = [
     //   {
     //     id: 1,
