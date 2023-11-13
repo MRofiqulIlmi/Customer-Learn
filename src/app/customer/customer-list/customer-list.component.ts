@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
+import { SorterService } from 'src/app/core/sorter.service';
 import { ICustomer } from 'src/app/shared/interfaces';
 
 @Component({
@@ -27,7 +28,8 @@ export class CustomerListComponent implements OnInit {
     }
   }
 
-  constructor() {}
+  //the SorterService inject as a class will be provide sort function
+  constructor(private sorterService: SorterService) {}
   ngOnInit() {
     //this is only for the test : is the component was render properly. The data will put on different way, also the customersOrderTotal.
     // this.filteredCustomers = [
@@ -70,7 +72,8 @@ export class CustomerListComponent implements OnInit {
   }
 
   sortHandle(prop: string) {
-    //this handle for sort the table later
+    //sort provide by SorterService, need 2 param, collection data and prop as a name of column will be sort
+    this.sorterService.sort(this.filteredCustomers, prop);
   }
 
   //filterHandle will map the data show only if the filter criteria was true or exist in list of data
