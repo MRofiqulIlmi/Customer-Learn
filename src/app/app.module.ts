@@ -15,6 +15,7 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     CustomerModule,
     SharedModule,
+    AppRoutingModule,
   ],
   declarations: [AppComponent],
   providers: [],
