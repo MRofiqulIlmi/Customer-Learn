@@ -7,10 +7,11 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { FilterTextBoxComponent } from './customer-list/filter-texbox.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { CustomerRoutingModule } from './customer-routing.module';
 
 @NgModule({
   //commonModule for several functionality like ngFor directive, sharedModule for custom module have be done in shared file, formsmodule is for ngModel directive
-  imports: [CommonModule, SharedModule, FormsModule],
+  imports: [CommonModule, SharedModule, FormsModule, CustomerRoutingModule],
   declarations: [
     CustomerComponent,
     CustomerListComponent,
