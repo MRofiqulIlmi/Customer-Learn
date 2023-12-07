@@ -19,12 +19,24 @@ export class OrdersComponent {
 
   constructor(
     private dataService: DataService,
+    //activatedRoute is to look the root on the time they hit
     private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    //the 1 will be change by id come from the routing
-    this.dataService.getCustomer(1).subscribe((customerVal: ICustomer) => {
+    //snapshot used for capture the id will be placed on route, but this condition can't be use if id change for random time or responsive
+    //the paramMap will capture param on it
+    let id: any = this.route.snapshot.paramMap.get('id');
+
+    if (typeof id === 'string') {
+      id = parseInt(id);
+    }
+
+    this.dataService.getOrders(id).subscribe((order: IOrder[]) => {
+      this.orders = order;
+    });
+
+    this.dataService.getCustomer(id).subscribe((customerVal: ICustomer) => {
       this.customer = customerVal;
     });
   }
