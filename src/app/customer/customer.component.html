@@ -1,5 +1,9 @@
-<h3 [hidden]="!isVisible">{{ title }}</h3>
+<div class="container">
+    <div class="customerDiv">
+  <h3 [hidden]="!isVisible">{{ title }}</h3>
 
-<button (click)="changeVisible()">show/hide</button>
-<p>customer works!</p>
-<app-customer-list [customers]="people"></app-customer-list>
+  <button (click)="changeVisible()">show/hide</button>
+  <p>customer works!</p>
+  <app-customer-list [customers]="people"></app-customer-list>
+</div>
+</div>

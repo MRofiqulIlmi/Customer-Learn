@@ -1,0 +1,17 @@
+<div *ngIf="customer">
+  <h1>Order for {{ customer.name | Capitalize }}</h1>
+  <table *ngFor="let order of orders" class="table table-hover orders-table">
+    <caption>
+      Customer Order
+    </caption>
+    <tr>
+      <th>Product Name</th>
+      <th>item Cost</th>
+    </tr>
+    <tr *ngFor="let orderItem of order.orderItems">
+      <td>{{ orderItem.productName }}</td>
+      <td>{{ orderItem.itemCost | currency : "USD" : "symbol" }}</td>
+    </tr>
+  </table>
+</div>
+<div *ngIf="!customer">No customer found</div>

@@ -20,11 +20,11 @@ export class DataService {
       .pipe(catchError(this.handleError));
   }
 
-  getCustomer(id: number): Observable<ICustomer[]> {
+  getCustomer(id: number): Observable<ICustomer> {
     return this.http.get<ICustomer[]>(this.baseUrl + 'customers.json').pipe(
       map((customers) => {
         let customer = customers.filter((cust: ICustomer) => cust.id == id);
-        return customer;
+        return customer[0];
       }),
       catchError(this.handleError)
     );
