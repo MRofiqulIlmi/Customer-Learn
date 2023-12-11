@@ -17,7 +17,10 @@
         <!-- some pipe is default also can be customize -->
         <!-- this one is the way if you want to manipulate showen data the method name is pipe -->
         <!-- <a>{{ cust.name | titlecase }}</a> -->
-        <a>{{ cust.name | Capitalize }}</a>
+        <!-- this Router link is use for directive routing into detail of order every customer -->
+        <a [routerLink]="['/orders', cust.id]" onclick="console.log('tes')">{{
+          cust.name | Capitalize
+        }}</a>
       </td>
       <td>{{ cust.city }}</td>
 

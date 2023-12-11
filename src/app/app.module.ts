@@ -3,11 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CustomerComponent } from './customer/customer.component';
 import { CustomerModule } from './customer/customer.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
-import { OrdersComponent } from './orders/orders.component';
+import { OrdersModule } from './orders/orders.module';
 
 @NgModule({
   imports: [
@@ -17,8 +16,9 @@ import { OrdersComponent } from './orders/orders.component';
     CustomerModule,
     SharedModule,
     AppRoutingModule,
+    OrdersModule,
   ],
-  declarations: [AppComponent, OrdersComponent],
+  declarations: [AppComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
