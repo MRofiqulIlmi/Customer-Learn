@@ -23,3 +23,5 @@ import { OrdersModule } from './orders/orders.module';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+// source : Scrimba , https://scrimba.com/learn/yourfirstangularapp , @DanWahlin
